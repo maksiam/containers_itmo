@@ -1,0 +1,12 @@
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y python3 python3-pip
+RUN pip3 install python-telegram-bot mistralai python-dotenv
+
+COPY . /app
+WORKDIR /app
+
+ENV TELEGRAM_BOT_TOKEN=your_token_here
+ENV MISTRAL_API_KEY=your_key_here
+
+CMD ["python3", "bot.py"]
