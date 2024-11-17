@@ -3,18 +3,20 @@ version: '3.8'
 services:
   init:
     image: busybox
-    command: echo "Initialization complete"
+    container_name: init_service
+    command: sh -c "echo 'Initializing...' && sleep 5 && echo 'Initialization complete'"
     networks:
       - bot_network
 
   app:
     build:
       context: .
-      dockerfile: Dockerfile.good
+      dockerfile: Dockerfile
+    image: telegram_rag_bot:latest
     container_name: telegram_bot
     depends_on:
-      - db
-      - faiss
+      - init
+      - faiss_db
     volumes:
       - ./logs:/app/logs
     ports:
@@ -22,38 +24,32 @@ services:
     environment:
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
       - MISTRAL_API_KEY=${MISTRAL_API_KEY}
-      - FAISS_DB_PATH=/app/faiss_index
+      - FAISS_SERVICE_URL=http://faiss_db:5000
+    command: ["python", "main.py"]
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      test: ["CMD", "curl", "-f", "http://faiss_db:5000"]
       interval: 30s
       timeout: 10s
       retries: 3
     networks:
       - bot_network
 
-  db:
-    image: postgres:13
-    container_name: postgres_db
-    volumes:
-      - db_data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=${POSTGRES_DB}
-    networks:
-      - bot_network
-
-  faiss:
-    image: faiss:latest
+  faiss_db:
+    build:
+      context: .
+      dockerfile: Dockerfile.faiss
     container_name: faiss_db
     volumes:
       - faiss_data:/app/faiss_index
+    ports:
+      - "5000:5000"
+    command: ["python", "faiss_server.py"]
     networks:
       - bot_network
 
 volumes:
-  db_data:
   faiss_data:
 
 networks:
   bot_network:
+    name: bot_network
