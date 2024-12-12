@@ -26,9 +26,6 @@ kubectl apply -f bot_deployment.yaml
     <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_4/screenshots/photo_2_2024-12-13_01-59-55.jpg" />
 </p>
 <p>
-    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_4/screenshots/photo_1_2024-12-13_01-59-55.jpg" />
-</p>
-<p>
     <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_4/screenshots/photo_4_2024-12-13_01-59-55.jpg" />
 </p>
 <p>
