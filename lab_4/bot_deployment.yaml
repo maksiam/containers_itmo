@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegram-bot
+  labels:
+    app: telegram-bot
+    tier: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telegram-bot
+  template:
+    metadata:
+      labels:
+        app: telegram-bot
+        tier: frontend
+    spec:
+      initContainers:
+      - name: init-service
+        image: busybox
+        command: ['sh', '-c', 'echo "Initializing..." && sleep 5 && echo "Initialization complete"']
+      containers:
+      - name: telegram-bot
+        image: telegram_rag_bot:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: bot-config
+        - secretRef:
+            name: bot-secrets
+        volumeMounts:
+        - name: logs-volume
+          mountPath: /app/logs
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 30
+      volumes:
+      - name: logs-volume
+        emptyDir: {}
