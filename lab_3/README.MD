@@ -15,34 +15,34 @@ Deployment нужно разворачивать в последнюю очер�
 
 Скриншоты в порядке выполнения работы:  
 <p>
-    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_5_2024-12-12_20-36-23.jpg"  height="500" />
+    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_5_2024-12-12_20-36-23.jpg" />
 </p>
 
 <p>
-    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_3_2024-12-12_20-36-23.jpg"  height="500" />
+    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_3_2024-12-12_20-36-23.jpg" />
 </p>
 
 <p>
-    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_2_2024-12-12_20-36-23.jpg"  height="500" />
+    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_2_2024-12-12_20-36-23.jpg"  />
 </p>
 
 <p>
-    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_6_2024-12-12_20-36-23.jpg"  height="500" />
+    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_6_2024-12-12_20-36-23.jpg" />
 </p>
 
 <p>
-    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_4_2024-12-12_20-36-23.jpg"  height="500" />
+    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_4_2024-12-12_20-36-23.jpg"  />
 </p>
 
 <p>
-    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_8_2024-12-12_20-36-23.jpg"  height="500" />
+    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_8_2024-12-12_20-36-23.jpg"  />
 </p>
 
 <p>
-    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_1_2024-12-12_20-36-23.jpg"  height="500" />
+    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_1_2024-12-12_20-36-23.jpg" />
 </p>
 
 <p>
-    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_7_2024-12-12_20-36-23.jpg"  height="500" />
+    <img src="https://github.com/maksiam/containers_itmo/blob/main/lab_3/screenshots/photo_7_2024-12-12_20-36-23.jpg" />
 </p>
 
